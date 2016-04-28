@@ -1,3 +1,5 @@
+fork from NCTU\_Revenclew [original](https://github.com/lnishan/Notebook)  
+
 # Notebook / ACM-ICPC Contest Template
 This is a notebook for attending programming contests.  
 This was initially started by me, and continued with my ex-teammate Pin-Wei Liao (pwliao).

@@ -12,7 +12,6 @@ set cindent
 
 syntax on
 set t_Co=256
-colorscheme molokai 
 set number
 set showmatch
 set hls
