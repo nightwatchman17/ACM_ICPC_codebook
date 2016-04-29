@@ -39,90 +39,89 @@
 
 
 
+
 \begin {document}
 \pagestyle{fancy}
 \fancyfoot{}
 %\fancyfoot[R]{\includegraphics[width=20pt]{ironwood.jpg}}
-\fancyhead[L]{NCTU\_Ravenclaw}
+\fancyhead[L]{NCTU\_Radar}
 \fancyhead[R]{\thepage}
+\setlength{\headheight}{15pt}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\contentsname}{Contents} 
 \scriptsize
 \tableofcontents
-%\title {NCTU\_Ravenclaw Codebook}
 
 \bigskip
 \lstinputlisting [language=bash] {"Source/.vimrc"}
 
-\newpage
-\section{Misc}
-\subsection{JavaCheatSheet}
-\lstinputlisting [language=Java] {"Source/JavaCheatSheet.java"}
 
-\newpage
-\section{BasicDS}
-\subsection{Doubly Linked List}
-\lstinputlisting [language=c++] {"Source/BasicDS_Doubly Linked List.cpp"}
-\subsection{Hashmap\_Unordered Map\_umap}
-\lstinputlisting [language=c++] {"Source/BasicDS_Hashmap_Unordered Map_umap.cpp"}
 
-\newpage
-\section{Graph}
-\subsection{Strongly\ Connected\ Component}
-\lstinputlisting [language=c++] {"Source/Graph_Strongly Connected Component_UVa_11838.cpp"}
-\subsection{Articulation Point}
-\lstinputlisting [language=c++] {"Source/Graph_Articulation Point_UVa_10765.cpp"}
-\subsection{Eulerian Circuit\_Trail}
-\lstinputlisting [language=c++] {"Source/Graph_Eulerian Circuit_UVa_10054_The Necklace.cpp"}
-\subsection{LCA\_Tarjan's Algorithm}
-\lstinputlisting [language=c++] {"Source/Graph_LCA_Tarjan's Algorithm_POJ_1470_Closest Common Ancestors.cpp"}
-\subsection{LCAtoRMQ\_LA}
-\lstinputlisting [language=c++] {"Source/Graph_LCAtoRMQ_LA_CF_519E.cpp"}
-\subsection{Min\ Path\ Cover\_Max\ Bipartite\ Matching}
-\lstinputlisting [language=c++] {"Source/Graph_Minimum Disjoint Path Cover (Directed Graph)_Maximum Bipartite Matching_GCPC2015_B.cpp"}
-\subsection{Maximum Flow\_Dinic's Algorithm}
-\lstinputlisting [language=c++] {"Source/Graph_Maximum Flow_Dinic's Algorithm.cpp"}
 
 \newpage
 \section{Math}
-\subsection{ExGCD\_Lucas\_CRT}
-\lstinputlisting [language=c++] {"Source/Math_Extended GCD_Lucas Theorem_Chinese Remainder Theorem.cpp"}
-\subsection{Pollard's rho\_Miller Rabin}
-\lstinputlisting [language=c++] {"Source/Math_Pollard's rho_Miller Rabin_CF_100753F.cpp"}
+\subsection{Math Basic}
+\lstinputlisting [language=c++] {"Source/Math_Basic.cpp"}
 
-\newpage
-\section{RangeQuery}
-\subsection{RMQ}
-\lstinputlisting [language=c++] {"Source/RangeQuery_RMQ.cpp"}
-\subsection{Fenwick Tree}
-\lstinputlisting [language=c++] {"Source/RangeQuery_Fenwick Tree.cpp"}
-\subsection{Fenwick Tree\_2D}
-\lstinputlisting [language=c++] {"Source/RangeQuery_Fenwick Tree_2D.cpp"}
-\subsection{Mo's Algorithm}
-\lstinputlisting [language=c++] {"Source/RangeQuery_Mo's Algorithm_CF_86D.cpp"}
-\subsection{Kth Element\_Partition Tree\_Fractional Cascading}
-\lstinputlisting [language=c++] {"Source/RangeQuery_Kth Element_Partition Tree_Fractional Cascading.cpp"}
-\subsection{Discrete Segment Tree}
-\lstinputlisting [language=c++] {"Source/RangeQuery_Discrete Segment Tree_Sweeping Lines_SGPre2015_E.cpp"}
-\subsection{Treap}
-\lstinputlisting [language=c++] {"Source/RangeQuery_Treap_POJ_2761_Feed the dogs.cpp"}
-\subsection{Treap,NoKey}
-\lstinputlisting [language=c++] {"Source/RangeQuery_Treap,NoKey_POJ_3580_SuperMemo.cpp"}
-\subsection{Persistent Treap}
-\lstinputlisting [language=c++] {"Source/RangeQuery_Persistent Treap_UVa_12538.cpp"}
+\subsection{Euler Function}
+\lstinputlisting [language=c++] {"Source/Math_Euler_Func.cpp"}
+
+\subsection{China Remain Theorm}
+\lstinputlisting [language=c++] {"Source/Math_CRT.cpp"}
+
+\subsection{Math Counting}
+\lstinputlisting [language=c++] {"Source/Math_Counting.cpp"}
+
+
+
 
 \newpage
 \section{String}
-\subsection{KMP Algorithm}
-\lstinputlisting [language=c++] {"Source/String_KMP Algorithm.cpp"}
-\subsection{Suffix Array\_LCP Array}
-\lstinputlisting [language=c++] {"Source/String_Suffix Array_LCP Array_UVa_760.cpp"}
+\subsection{KMP}
+\lstinputlisting [language=c++] {"Source/String_KMP.cpp"}
+
+\subsection{LPS}
+\lstinputlisting [language=c++] {"Source/String_LPS.cpp"}
+
+
+
+
+\newpage
+\section{Tree}
+\subsection{Tree Min Vertex Cover}
+\lstinputlisting [language=c++] {"Source/Tree_Min_Vertex_Cover.cpp"}
+
+
+
+
+\newpage
+\section{Graph}
+\subsection{Bipartite: MaxMatch, MinVerCover, MaxIndSet}
+\lstinputlisting [language=c++] {"Source/Graph_Bipartite.cpp"}
+
+\subsection{Min Vertex Cover}
+\lstinputlisting [language=c++] {"Source/Graph_Min_Vertex_Cover.cpp"}
+
+
+
+
+\newpage
+\section{Flow}
+\subsection{Dinic}
+\lstinputlisting [language=c++] {"Source/Flow_Dinic.cpp"}
+
+
+
 
 \newpage
 \section{Geometry}
-\subsection{Convex Hull\_Monotone Chain}
-\lstinputlisting [language=c++] {"Source/Geometry_Convex Hull_Monotone Chain.cpp"}
-\subsection{Intersecting Halfplanes}
-\lstinputlisting [language=c++] {"Source/Geometry_Intersecting Halfplanes_Sweeping Lines_UVa_11265.cpp"}
+\subsection{Geometry basic}
+\lstinputlisting [language=c++] {"Source/Geometry_Basic.cpp"}
+
+\subsection{Minimal Enclose Disk}
+\lstinputlisting [language=c++] {"Source/Geometry_Min_Enclose_Disk.cpp"}
+
+\subsection{2D Convex Hull}
+\lstinputlisting [language=c++] {"Source/Geometry_Convex_Hull.cpp"}
 
 \end {document}
