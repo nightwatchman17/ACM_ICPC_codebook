@@ -29,9 +29,11 @@ They help us a lot.
   - [ ] Treap
   - [x] Tree Min Vertex Cover
 * Graph
-  - [ ] DFS系列
+  - [ ] DFS blablabla
   - [ ] Shortest Path
-  - [ ] Coloring??
+  - [ ] Graph Coloring??
+  - [ ] 2-SAT
+  - [ ] System of Difference Constraints
   - [x] Bipartite: MaxMatch, MinVerCover, MaxIndSet
   - [ ] Bipartite: KM
   - [x] Min Vertex Cover
