@@ -12,7 +12,7 @@ They help us a lot.
   - [x] Euler Funcion
   - [x] Chinese Remain Theorm
   - [x] Counting
-  - [ ] Miller Rabin
+  - [x] Miller Rabin
   - [ ] Pollard rho
   - [ ] Linear Algebra
   - [ ] FFT
