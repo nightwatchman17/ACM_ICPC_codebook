@@ -15,7 +15,7 @@ They help us a lot.
   - [x] Miller Rabin
   - [ ] Pollard rho
   - [ ] Linear Algebra
-  - [ ] FFT
+  - [x] FFT
 * String
   - [x] KMP
   - [x] Longest Palindrome Substring
