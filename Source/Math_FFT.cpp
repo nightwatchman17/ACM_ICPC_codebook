@@ -1,6 +1,6 @@
 #include <complex>
 #include <vector>
-#include <cmath>
+using namespace std;
 
 const double PI = 3.141592654;
 typedef complex<double> Complex;
