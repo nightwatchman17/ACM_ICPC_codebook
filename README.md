@@ -14,7 +14,7 @@ They help us a lot.
   - [x] Counting
   - [x] Miller Rabin
   - [ ] Pollard rho
-  - [ ] Linear Algebra
+  - [x] Linear Algebra
   - [x] FFT
 * String
   - [x] KMP

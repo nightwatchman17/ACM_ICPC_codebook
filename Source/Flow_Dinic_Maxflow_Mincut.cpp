@@ -1,21 +1,11 @@
-struct Dinic{
-	enum{
-		maxN = 104
-	};
-
-	int maxFlow;
+class Dinic{
+private:
+	static const int maxN = 104;
 	int pipe[maxN][maxN];
 	vector<int> g[maxN];
 
-	void init(){
-		maxFlow = 0;
-		memset(pipe , 0 , sizeof(pipe));
-		for(int i=0;i<maxN;++i)
-			g[i].clear();
-	}
-
 	int level[maxN];
-	bool bfsLabeling(int s,int t){
+	bool bfsLabeling(int s, int t){
 		memset(level , 0 , sizeof(level));
 		queue<int> myQ;
 		myQ.push( s );
@@ -31,13 +21,12 @@ struct Dinic{
 		}
 		return level[t];
 	}
-	
-	int dfsFindRoute(const int &nowAt,const int &t,const int &maxC){
+	int dfsFindRoute(int nowAt, int t, int maxC) {
 		if( nowAt==t ){
 			maxFlow += maxC;
 			return maxC;
 		}
-		for(int i=0;i<g[nowAt].size();++i){
+		for(int i=0; i<g[nowAt].size(); ++i) {
 			int next = g[nowAt][i];
 			if( level[next] != level[nowAt]+1 ) continue;
 			if( !pipe[nowAt][next] ) continue;
@@ -51,20 +40,39 @@ struct Dinic{
 		return 0;
 	}
 
-	void findMaxFlow(int s,int t){
-		while( bfsLabeling(s,t) )
-			while( dfsFindRoute(s,t,1e8) )
-				;
-	}
+public:
+	int maxFlow;
+	vector<pii> minCut;
 
-	void findMinCut(int s,int t){
-		findMaxFlow(s,t);
-		for(int i=0;i<maxN;++i){
+	void init(){
+		memset(pipe , 0 , sizeof(pipe));
+		for(int i=0;i<maxN;++i)
+			g[i].clear();
+		maxFlow = 0;
+		minCut.clear();
+	}
+	void addEdge(int u, int v, int c) {
+		if( u==v ) return;
+		if( pipe[u][v]==0 ) {
+			g[u].emplace_back(v);
+			g[v].emplace_back(u);
+		}
+		pipe[u][v] += c;
+		pipe[v][u] += c;
+	}
+	void coculAll(int s, int t) {
+		// max flow
+		while( bfsLabeling(s,t) )
+			while( dfsFindRoute(s,t,1023456789) )
+				;
+
+		// min cut
+		for(int i=0;i<maxN;++i) {
 			if( level[i]!=0 )
 				continue;
-			for(int j=0;j<g[i].size();++j)
+			for(int j=0; j<g[i].size(); ++j)
 				if( level[g[i][j]]==0 )
-					printf("%d %d\n",i,g[i][j]);
+					minCut.push_back({i, g[i][j]});
 		}
 	}
 };
