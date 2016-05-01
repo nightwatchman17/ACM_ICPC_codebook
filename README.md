@@ -32,7 +32,7 @@ They help us a lot.
   - [ ] DFS blablabla
   - [ ] Shortest Path
   - [ ] Graph Coloring??
-  - [ ] 2-SAT
+  - [x] 2-SAT
   - [ ] System of Difference Constraints
   - [x] Bipartite: MaxMatch, MinVerCover, MaxIndSet
   - [ ] Bipartite: KM
