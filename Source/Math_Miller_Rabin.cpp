@@ -96,3 +96,51 @@ ull fast_pow(ull n, ull p, ull x)
 	}
 	return re;
 }
+
+// Below is non-extreme version
+ull fake_mul(ull n, ull m, ull x) {
+	ull re = 0ULL;
+	n %= x, m %= x;
+	while( m ) {
+		if( m&1ULL )
+			re = (re+n) % x;
+		n = (n+n) % x;
+		m >>= 1;
+	}
+	return re;
+}
+ull fast_pow(ull n, ull p, ull x) {
+	ull re = 1ULL;
+	while( p ) {
+		if( p&1ULL )
+			re = fake_mul(re,n,x);
+		n = fake_mul(n,n,x);
+		p >>= 1;
+	}
+	return re;
+}
+bool is_prime(ull n) {
+	static const int bNum = 12;
+	static const ull bases[bNum] = {
+		2ULL,3ULL,5ULL,7ULL,11ULL,13ULL,17ULL,19ULL,23ULL,29ULL,31ULL,37ULL
+	};
+	if( n<=2ULL ) return n==2ULL;
+	if( !(n&1ULL) ) return false;
+
+	ull u = n-1;
+	while( !(u&1ULL) )
+		u >>= 1;
+	for(int i=0; i<bNum; i++) {
+		if( bases[i]%n == 0 ) continue;
+		ull t = u;
+		ull a = fast_pow(bases[i], t, n);
+		if( a==1 || a==n-1 ) continue;
+		while( t!=n-1 && a!=1 && a!=n-1 ) {
+			a = fake_mul(a,a,n);
+			t <<= 1;
+		}
+		if( t==n-1 && a==1 ) continue;
+		if( a!=n-1 ) return false;
+	}
+	return true;
+}
