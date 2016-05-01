@@ -1,8 +1,11 @@
 class Dinic{
 private:
 	static const int maxN = 104;
+	static const int infF = 1023456789;
+	int cap [maxN][maxN];
 	int pipe[maxN][maxN];
 	vector<int> g[maxN];
+	bool sside[maxN];
 
 	int level[maxN];
 	bool bfsLabeling(int s, int t){
@@ -39,13 +42,21 @@ private:
 		}
 		return 0;
 	}
+	void dfsFindMinCut(int nowAt) {
+		sside[nowAt] = 1;
+		for(auto v : g[nowAt])
+			if( !sside[v] && pipe[nowAt][v] )
+				dfsFindMinCut(v);
+	}
 
 public:
 	int maxFlow;
 	vector<pii> minCut;
 
 	void init(){
-		memset(pipe , 0 , sizeof(pipe));
+		memset(cap  , 0, sizeof(cap));
+		memset(pipe , 0, sizeof(pipe));
+		memset(sside, 0, sizeof(sside));
 		for(int i=0;i<maxN;++i)
 			g[i].clear();
 		maxFlow = 0;
@@ -53,26 +64,24 @@ public:
 	}
 	void addEdge(int u, int v, int c) {
 		if( u==v ) return;
-		if( pipe[u][v]==0 ) {
+		if( cap[u][v]==0 )
 			g[u].emplace_back(v);
-			g[v].emplace_back(u);
-		}
-		pipe[u][v] += c;
-		pipe[v][u] += c;
+		cap[u][v] += c;
 	}
 	void coculAll(int s, int t) {
+		memcpy(pipe, cap, sizeof(pipe));
+
 		// max flow
 		while( bfsLabeling(s,t) )
-			while( dfsFindRoute(s,t,1023456789) )
+			while( dfsFindRoute(s,t,infF) )
 				;
 
 		// min cut
-		for(int i=0;i<maxN;++i) {
-			if( level[i]!=0 )
-				continue;
-			for(int j=0; j<g[i].size(); ++j)
-				if( level[g[i][j]]==0 )
-					minCut.push_back({i, g[i][j]});
-		}
+		dfsFindMinCut(s);
+		for(int u=0; u<maxN; ++u)
+		if( sside[u] )
+			for(auto v : g[u])
+			if( !sside[v] )
+				minCut.push_back({u, v});
 	}
 };

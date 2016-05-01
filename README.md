@@ -38,7 +38,7 @@ They help us a lot.
   - [ ] Bipartite: KM
   - [x] Min Vertex Cover
 * Flow
-  - [ ] Dinic
+  - [x] Dinic: Max Flow, Min Cut
 * Geometry
   - [x] Basic
   - [ ] Polygon Intersect
