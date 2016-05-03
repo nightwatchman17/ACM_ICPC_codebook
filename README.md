@@ -13,7 +13,7 @@ They help us a lot.
   - [x] Chinese Remain Theorm
   - [x] Counting
   - [x] Miller Rabin
-  - [ ] Pollard rho
+  - [x] Pollard rho
   - [x] Linear Algebra
   - [x] FFT
 * String
