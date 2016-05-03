@@ -29,6 +29,7 @@ They help us a lot.
   - [ ] Treap
   - [x] Tree Min Vertex Cover
 * Graph
+  - [x] Biconnected Components
   - [ ] DFS blablabla
   - [ ] Shortest Path
   - [ ] Graph Coloring??
