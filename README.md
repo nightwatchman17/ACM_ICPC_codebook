@@ -37,7 +37,7 @@ They help us a lot.
   - [x] 2-SAT
   - [x] System of Difference Constraints
   - [x] Bipartite: MaxMatch, MinVerCover, MaxIndSet
-  - [ ] Bipartite: KM
+  - [x] Bipartite: KM
   - [x] Min Vertex Cover
 * Flow
   - [x] Dinic: Max Flow, Min Cut
