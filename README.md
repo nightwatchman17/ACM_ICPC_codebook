@@ -23,7 +23,7 @@ They help us a lot.
   - [ ] Rolling Hash
   - [ ] Prefix??
   - [ ] Suffix??
-  - [ ] AC Automation
+  - [x] AC Automation
 * Tree
   - [ ] Segment Tree
   - [ ] Treap
@@ -34,7 +34,7 @@ They help us a lot.
   - [ ] Shortest Path
   - [ ] Graph Coloring??
   - [x] 2-SAT
-  - [ ] System of Difference Constraints
+  - [x] System of Difference Constraints
   - [x] Bipartite: MaxMatch, MinVerCover, MaxIndSet
   - [ ] Bipartite: KM
   - [x] Min Vertex Cover
