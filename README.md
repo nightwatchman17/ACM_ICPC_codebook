@@ -24,6 +24,7 @@ They help us a lot.
   - [ ] Prefix??
   - [ ] Suffix??
   - [x] AC Automation
+  - [x] Z Algorithm
 * Tree
   - [ ] Segment Tree
   - [ ] Treap
