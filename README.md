@@ -10,6 +10,7 @@ They help us a lot.
 * Math
   - [x] Basic
   - [x] Euler Funcion
+  - [x] Extended Euclidean
   - [x] Chinese Remain Theorm
   - [x] Counting
   - [x] Miller Rabin
