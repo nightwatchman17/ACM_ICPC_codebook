@@ -25,3 +25,9 @@ long long modInv_euler(long long x, long long m){
 	// phi is euler function: O(sqrt(x))
 	return fastPow(x, phi(m)-1, m);
 }
+long long gt(long long a, long long b) {
+	// smallest integer greater than a/b
+	long long ret = a/b;
+	if( ret>0 || a%b==0 ) ++ret;
+	return ret;
+}
