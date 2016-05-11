@@ -32,8 +32,6 @@ They help us a lot.
   - [x] Tree Min Vertex Cover
 * Graph
   - [x] Biconnected Components
-  - [ ] DFS blablabla
-  - [ ] Shortest Path
   - [ ] Graph Coloring??
   - [x] 2-SAT
   - [x] System of Difference Constraints
@@ -47,6 +45,7 @@ They help us a lot.
   - [ ] Polygon Intersect
   - [x] 2D Convex Hull
   - [x] Minimal Enclose Disk
+  - [x] Closest Point
 
 
 ## Usage
