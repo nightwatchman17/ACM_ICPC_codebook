@@ -27,8 +27,7 @@ They help us a lot.
   - [x] AC Automation
   - [x] Z Algorithm
 * Tree
-  - [ ] Segment Tree
-  - [ ] Treap
+  - [x] Treap
   - [x] Tree Min Vertex Cover
 * Graph
   - [x] Biconnected Components
