@@ -1,7 +1,7 @@
 pair<double,double> findMinMaxTri(vector<Point> &ps) {
 	static const double PI = acos(-1.0);
 	struct Seg {
-		double rad; // [, pi]
+		double rad; // [0.5pi, 1.5pi]
 		int s1, s2;
 	};
 
