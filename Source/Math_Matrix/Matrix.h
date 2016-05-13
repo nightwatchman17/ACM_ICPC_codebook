@@ -11,7 +11,7 @@ public:
 	int rSize, cSize;
 	vector< vector<T> > mat;
 
-	Matrix(int r, int c) :rSize(r), cSize(c), mat(rSize, vector<T>(cSize)){}
+	Matrix(int r = 0, int c = 0) :rSize(r), cSize(c), mat(rSize, vector<T>(cSize)){}
 	vector<T>& operator[](int i) {
 		return mat[i];
 	}
