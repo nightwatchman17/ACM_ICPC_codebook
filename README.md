@@ -17,13 +17,12 @@ They help us a lot.
   - [x] Pollard rho
   - [x] Linear Algebra
   - [x] FFT
+  - [x] Hash
 * String
   - [x] KMP
   - [x] Longest Palindrome Substring
   - [ ] Trie
   - [ ] Rolling Hash
-  - [ ] Prefix??
-  - [ ] Suffix??
   - [x] AC Automation
   - [x] Z Algorithm
 * Tree
