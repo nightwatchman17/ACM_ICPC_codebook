@@ -44,6 +44,7 @@ They help us a lot.
   - [x] 2D Convex Hull
   - [x] Minimal Enclose Disk
   - [x] Closest Point
+  - [x] Min Max Triangle
 
 
 ## Usage
