@@ -30,6 +30,7 @@ They help us a lot.
   - [x] Tree Min Vertex Cover
 * Graph
   - [x] Biconnected Components
+  - [x] Strong Connected Components
   - [ ] Graph Coloring??
   - [x] 2-SAT
   - [x] System of Difference Constraints
