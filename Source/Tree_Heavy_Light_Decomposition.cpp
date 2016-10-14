@@ -41,19 +41,19 @@ void chain(int u) {
 			chain(v);
 	}
 }
-void modify(int u, int v, int value) {
+void modify(int u, int v, ...) {
 	while(head[u] != head[v])
 		if(d[head[u]] > d[head[v]]) {
-			update(1, n, 1, ind[head[u]], ind[u], value);
+			//do something in rang(ind[head[u]], ind[u]);
 			u = f[head[u]];
 		} else {
-			update(1, n, 1, ind[head[v]], ind[v], value);
+			//do something in rang(ind[head[v]], ind[v]);
 			v = f[head[v]];
 		}
 	if(d[u] > d[v])
-		update(1, n, 1, ind[v], ind[u], value);
+		//do something in rang(ind[head[u]], ind[u]);
 	else
-		update(1, n, 1, ind[u], ind[v], value);
+		//do something in rang(ind[head[v]], ind[v]);
 }
 void build() {
 	pn = 1;
