@@ -1,0 +1,5 @@
+D = Degree matrix (diagonal entries are node's degree)
+A = Adjacency matrix (01 matrix)
+Q = Laplacian matrix = D - A
+Q* = deleting any row and any column from Q
+Number of spanning tree = det(Q*)
