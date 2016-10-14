@@ -55,6 +55,17 @@ void modify(int u, int v, ...) {
 	else
 		//do something in rang(ind[head[v]], ind[v]);
 }
+int getLca(int u, int v) {
+	while(head[u] != head[v])
+		if(d[head[u]] > d[head[v]])
+			u = f[head[u]];
+		else
+			v = f[head[v]];
+	if(d[u] > d[v])
+		return v;
+	else
+		return u;
+}
 void build() {
 	pn = 1;
 	d[0] = 0;	//set depth of root to 0
