@@ -1,14 +1,18 @@
-N applicant M position，each applicant have his own perference list (not required containing all position)
-Target: find a matching s.t. not existing another matching have more applicant prefer. this matching called popular matching
-A applicant u prefer another matching which imply that『this matching doesn't have u but the other does』or『the other matching give u the position that he more prefer』
+N applicant M position
+Each applicant have his own perference list (not required containing all position)
+Target: find a matching s.t. not existing another matching have more applicant prefer. This matching called popular matching
+A applicant u prefer another matching which imply that
+    "This matching doesn't have u but the other does"
+    or
+    "The other matching give u the position that he more prefer"
 
 Define hot position: the position is any applicant's first choice
 
-Solve: whethere there is a popular matching
-(1) Each applicant build and edge with 『his first choice』 and 『his first choice except all hot position』(if not exist, build a dummy position)
+Solve: Whethere there is a popular matching
+(1) Each applicant build and edge with "his first choice" and "his first choice except all hot position" (if not exist, build a dummy position)
 (3) Return whether all applicant can have a position
 
-Solve: maximum popular matching
+Solve: Maximum popular matching
 (1) If popular matching not exist return No
 (2) Use the result above
 (3) Remove all dummy position
