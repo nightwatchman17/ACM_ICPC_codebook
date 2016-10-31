@@ -25,6 +25,7 @@ They help us a lot.
   - [ ] Rolling Hash
   - [x] AC Automation
   - [x] Z Algorithm
+  - [x] Suffix Array
 * Tree
   - [x] Treap
   - [x] Tree Min Vertex Cover
