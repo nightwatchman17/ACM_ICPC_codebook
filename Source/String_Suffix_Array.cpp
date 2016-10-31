@@ -1,10 +1,10 @@
-vector<int> buildSuffixArray(const vector<int> &str) {
+vector<int> buildSuffixArray(const vector<int> &str, int endOfString=-1) {
     // sa: i -> start position of str
     // O(n*lgn*lgn). probably faster than O(n*lgn) version
     int len = str.size();
     vector<int> sa(len+1), rank(len+1);
     for(int i=0; i<len; ++i) rank[sa[i] = i] = str[i];
-    rank[sa.back() = len] = -1;
+    rank[sa.back() = len] = endOfString;
     for(int ll=1, cnt=0; cnt!=len; ll<<=1, cnt=rank[sa.back()]) {
         auto cmp = [&](const int l, const int r) {
             if( rank[l]!=rank[r] ) return rank[l] < rank[r];
