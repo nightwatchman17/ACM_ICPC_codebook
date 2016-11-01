@@ -26,6 +26,7 @@ They help us a lot.
   - [x] AC Automation
   - [x] Z Algorithm
   - [x] Suffix Array
+  - [x] Burrows–Wheeler transform
 * Tree
   - [x] Treap
   - [x] Tree Min Vertex Cover
