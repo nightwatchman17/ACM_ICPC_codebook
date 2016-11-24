@@ -1,9 +1,8 @@
 class TwoSAT {
 private:
-	static const int maxN = 100004;
-	static const int size = 2*maxN + 4;
-	bool        pick[size];
-	vector<int> G   [size];
+	int V;
+	vector<bool> pick;
+	vector< vector<int> > G;
 
 	int id(int i, int T) { return (i<<1) + T; }
 	int alter(int i) { return i^1; }
@@ -19,24 +18,36 @@ private:
 		return true;
 	}
 public:
-	void init() {
-		memset(pick, 0, sizeof(pick));
-		for(int i=0; i<size; ++i)
-			G[i].clear();
+	void init(int varNum) {
+		V = varNum;
+		pick = vector<bool>(V*2 + 4, false);
+		G = vector< vector<int> >(V*2 + 4);
 	}
 	void addClause(bool TA, int A, bool TB, int B) {
 		// Add clause (TA + TB)
-		// When TA not true, TB must true. vise versa.
 		G[id(A, !TA)].emplace_back(id(B, TB));
 		G[id(B, !TB)].emplace_back(id(A, TA));
 	}
+	void imply(bool TA, int A, bool TB, int B) {
+		// TA -> TB
+		addClause(!TA, A, TB, B);
+	}
+	void preset(bool TA, int A) {
+		pick[id(A, TA)] = true;
+	}
 	bool solve() {
-		// O(n) solve
-		memset(pick, 0, sizeof(pick));
-		for(int i=0; i<maxN; ++i) {
+		vector<int> stk;
+		for(int i=0; i<V; ++i) {
+			if( pick[id(i, true)] && !dfsTry(id(i, true), stk) )
+				return false;
+			if( pick[id(i, false)] && !dfsTry(id(i, false), stk) )
+				return false;
+			stk.clear();
+		}
+		for(int i=0; i<V; ++i) {
 			if( pick[id(i, 0)] || pick[id(i, 1)] )
 				continue;
-			vector<int> stk;
+			stk.clear();
 			if( dfsTry(id(i, 0), stk) )
 				continue;
 			for(auto v : stk)
@@ -47,7 +58,7 @@ public:
 		return true;
 	}
 	bool T(int i) {
-		// should solve() first
+		// should solved first
 		return pick[id(i, 1)];
 	}
 };
