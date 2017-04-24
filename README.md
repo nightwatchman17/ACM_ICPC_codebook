@@ -21,24 +21,24 @@ They help us a lot.
 * String
   - [x] KMP
   - [x] Longest Palindrome Substring
-  - [ ] Trie
-  - [ ] Rolling Hash
   - [x] AC Automation
   - [x] Z Algorithm
   - [x] Suffix Array
   - [x] Burrows–Wheeler transform
+  - [ ] Suffix Automata
 * Tree
   - [x] Treap
   - [x] Tree Min Vertex Cover
 * Graph
   - [x] Biconnected Components
   - [x] Strong Connected Components
-  - [ ] Graph Coloring??
+  - [ ] Graph Coloring
   - [x] 2-SAT
   - [x] System of Difference Constraints
   - [x] Bipartite: MaxMatch, MinVerCover, MaxIndSet
   - [x] Bipartite: KM
   - [x] Min Vertex Cover
+  - [ ] Blossom Algorithm
 * Flow
   - [x] Dinic: Max Flow, Min Cut
 * Geometry
