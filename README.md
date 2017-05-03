@@ -52,13 +52,19 @@ They help us a lot.
 
 ## Usage
 
+### Install Dependency
+#### Ubuntu
+```
+sudo apt install texlive texlive-generic-extra
+```
+
 ### Cloning
 ```
-git clone https://github.com/lnishan/Notebook.git
+git clone https://github.com/sunset1995/ACM_ICPC_codebook.git
 ```
+
 ### Editing
 ```
-cd Notebook
 vim codebook.tex
 ```
 
