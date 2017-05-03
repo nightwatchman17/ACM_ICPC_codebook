@@ -1,0 +1,15 @@
+Requirement:
+- Two player take turns
+- In the same state, the action both players can take are the same
+- Game must end in finite turn
+- Lose if one player can not move in his/her turn
+
+Solution:
+- Using SG value to represent a game
+- SG value of multiple game are the xor of all of them
+- SG value = 0 iff first move lose. Vice versa.
+
+Find SG value of each game:
+- 0 when no move can be taken in the game
+- Find the smallest non negative integer that is not belong to
+    "All the SG value after one move"

@@ -18,6 +18,7 @@ They help us a lot.
   - [x] Linear Algebra
   - [x] FFT
   - [x] Hash
+  - [x] NIM
 * String
   - [x] KMP
   - [x] Longest Palindrome Substring
