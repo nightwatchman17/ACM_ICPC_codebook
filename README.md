@@ -39,6 +39,8 @@ They help us a lot.
   - [x] Bipartite: MaxMatch, MinVerCover, MaxIndSet
   - [x] Bipartite: KM
   - [x] Min Vertex Cover
+  - [x] Max Independent Set
+  - [x] Max Clique
   - [x] Blossom Algorithm
 * Flow
   - [x] Dinic: Max Flow, Min Cut
