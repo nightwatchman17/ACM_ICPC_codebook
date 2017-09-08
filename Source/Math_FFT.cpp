@@ -1,37 +1,33 @@
-#include <complex>
-#include <vector>
-using namespace std;
-
-const double PI = 3.141592654;
+const double PI = acos(-1.0);
 typedef complex<double> Complex;
 
-void _fft(vector<Complex>& buf, vector<Complex>& out,
-	int st, int step, bool isInv) {
-
-	if (step >= buf.size()) return;
-
-	_fft(out, buf, st, step * 2, isInv);
-	_fft(out, buf, st + step, step * 2, isInv);
-
-	int n = buf.size();
-	double c = isInv ? 1.0 : -1.0;
-	for (int i = 0; i < n; i += 2 * step) {
-		Complex t = polar(1.0, c * 2 * PI * i / n) * out[i + step + st];
-		buf[i / 2 + st] = out[i + st] + t;
-		buf[(i + n) / 2 + st] = out[i + st] - t;
-	}
+void _fft(const Complex *in, Complex *out, const vector<Complex> &pls, int step, int size, double dir) {
+    if(size < 1) return;
+    if(size == 1) {
+        out[0] = in[0];
+        return;
+    }
+    _fft(in, out, pls, step * 2, size / 2, dir);
+    _fft(in + step, out + size / 2, pls, step * 2, size / 2, dir);
+    for(int i = 0; i < size / 2; ++i) {
+        Complex even = out[i];
+        Complex odd = out[i + size / 2];
+        out[i] = even + pls[i * step] * odd;
+        out[i + size / 2] = even + pls[(i + size / 2) * step] * odd;
+    }
 }
 
-void fft(vector<Complex> &x, bool isInv) {
-	int n = x.size(), nxt2 = 0;
-	for (int i = 0, mask = 1; i < 31; i++, mask <<= 1)
-		nxt2 = (n&mask) ? (n != mask) ? 1 << (i + 1) : 1 << i : nxt2;
-	n = nxt2;
-	while (x.size() < n)
-		x.push_back(0);
+// x.size() must be 2^m
+vector<Complex> fft(const vector<Complex> &x, bool isInv) {
+    int n = x.size();
+    double dir = isInv ? -1. : 1.;
+    vector<Complex> pls(n);
+    for(int i=0; i<n; ++i)
+        pls[i] = polar(1.0, dir * 2 * PI * i / n);
 
-	vector<Complex> out = x;
-	_fft(x, out, 0, 1, isInv);
-	for (int i = 0; isInv && i < x.size(); i++)
-		x[i] /= n;
+    vector<Complex> out = x;
+    _fft(&x[0], &out[0], pls, 1, n, dir);
+    for(int i = 0; isInv && i < x.size(); i++)
+        out[i] /= n;
+    return out;
 }
